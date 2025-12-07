@@ -1,5 +1,8 @@
+import json
 import logging
+import uuid
 from typing import List
+from pathlib import Path
 
 from app.core.config import Settings
 from app.domain.models import Detection, ParsedRow, ScanResult
@@ -63,6 +66,16 @@ class ScanService:
       source = "groq" if llm_rows else (row.source or "rule")
       final_rows.append(row.copy(update={"source": source}))
 
+    txt_path = None
+    json_path = None
+    try:
+      base_stem = Path(annotated_path).stem if annotated_path else f"scan_{uuid.uuid4().hex}"
+      txt_path, json_path = self._persist_detections_files(
+        lines=ocr_result.lines, detections=detections, output_dir=self._output_dir, base_stem=base_stem
+      )
+    except Exception as exc:
+      logger.warning("Gagal menyimpan teks/json OCR: %s", exc)
+
     return ScanResult(
       lines=ocr_result.lines,
       parsed=final_rows,
@@ -71,6 +84,8 @@ class ScanService:
       annotated_image_path=annotated_path,
       image_width=image_width,
       image_height=image_height,
+      detection_text_path=txt_path,
+      detection_json_path=json_path,
     )
 
   @staticmethod
@@ -92,3 +107,21 @@ class ScanService:
     for idx, (line, box, score) in enumerate(zip(lines, boxes, scores)):
       detections.append(Detection(index=idx, text=line, score=score, box=box))
     return detections
+
+  @staticmethod
+  def _persist_detections_files(
+    lines: List[str], detections: List[Detection], output_dir: str, base_stem: str
+  ) -> tuple[str, str]:
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    txt_path = out_dir / f"{base_stem}.txt"
+    txt_path.write_text("\n".join(lines), encoding="utf-8")
+
+    json_path = out_dir / f"{base_stem}.json"
+    json_path.write_text(
+      json.dumps([det.model_dump() for det in detections], ensure_ascii=False, indent=2),
+      encoding="utf-8",
+    )
+
+    return str(txt_path), str(json_path)

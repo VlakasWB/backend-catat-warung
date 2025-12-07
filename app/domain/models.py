@@ -35,3 +35,5 @@ class ScanResult(BaseModel):
   annotated_image_path: Optional[str] = None
   image_width: Optional[int] = None
   image_height: Optional[int] = None
+  detection_text_path: Optional[str] = None
+  detection_json_path: Optional[str] = None
