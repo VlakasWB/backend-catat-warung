@@ -1,0 +1,65 @@
+# OCR Lines
+DAFTAR SUPPLIER & BAHAN BAKU TOKO SEJAHTERA
+No
+Nama Supplier
+Bahan Baku
+Harga(Rp)
+Kontak
+1
+Beras 25kg
+300.000
+0812-xxxx
+Toko Tani Makmur
+2
+Sumber Telur Jaya
+Telur Ayam 1 Peti
+450.000
+0857-xxxx
+3
+PT.Minyak Nusantara
+Minyak Goreng 1 Dus
+240.000
+0821-xxxx
+4
+Gula Merah Sari
+Minyak Goreng 1 Dus
+240.000
+0821-xxxx
+4
+Gula Merah Sari
+Gula Aren 1kg
+25.000
+0819-xxxx
+
+# Detections (index | score | text)
+0 | 0.9491 | DAFTAR SUPPLIER & BAHAN BAKU TOKO SEJAHTERA
+1 | 0.9832 | No
+2 | 0.9676 | Nama Supplier
+3 | 0.9615 | Bahan Baku
+4 | 0.9255 | Harga(Rp)
+5 | 0.9974 | Kontak
+6 | 0.9937 | 1
+7 | 0.9606 | Beras 25kg
+8 | 0.9964 | 300.000
+9 | 0.9479 | 0812-xxxx
+10 | 0.9698 | Toko Tani Makmur
+11 | 0.9961 | 2
+12 | 0.9490 | Sumber Telur Jaya
+13 | 0.9569 | Telur Ayam 1 Peti
+14 | 0.9947 | 450.000
+15 | 0.9279 | 0857-xxxx
+16 | 0.9988 | 3
+17 | 0.9603 | PT.Minyak Nusantara
+18 | 0.9691 | Minyak Goreng 1 Dus
+19 | 0.9961 | 240.000
+20 | 0.8896 | 0821-xxxx
+21 | 0.9981 | 4
+22 | 0.9439 | Gula Merah Sari
+23 | 0.9749 | Minyak Goreng 1 Dus
+24 | 0.9952 | 240.000
+25 | 0.8463 | 0821-xxxx
+26 | 0.9982 | 4
+27 | 0.9738 | Gula Merah Sari
+28 | 0.9732 | Gula Aren 1kg
+29 | 0.9965 | 25.000
+30 | 0.9138 | 0819-xxxx

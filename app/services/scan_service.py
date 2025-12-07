@@ -115,8 +115,13 @@ class ScanService:
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # Text file: raw lines + detections (index, score, text)
+    txt_lines = ["# OCR Lines", *lines, "", "# Detections (index | score | text)"]
+    for det in detections:
+      txt_lines.append(f"{det.index} | {det.score:.4f} | {det.text}")
+
     txt_path = out_dir / f"{base_stem}.txt"
-    txt_path.write_text("\n".join(lines), encoding="utf-8")
+    txt_path.write_text("\n".join(txt_lines), encoding="utf-8")
 
     json_path = out_dir / f"{base_stem}.json"
     json_path.write_text(

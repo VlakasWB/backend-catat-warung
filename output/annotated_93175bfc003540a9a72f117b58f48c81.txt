@@ -1,0 +1,67 @@
+# OCR Lines
+DAFTAR PELANGGAN TOKO SEJAHTERA
+Harga
+No.HP
+Hutang (Rp)
+Alamat
+Tanggal
+150.000
+No
+Nama
+0821-XXXX
+Jl.Melati No.10
+12 Mei 2026
+45.000
+Rina
+1
+0853-XXXX
+JI.Anggrek No.8
+14 Mei 2026
+80.000
+2
+Agus
+xxxx-9680
+JI.Dahlia No.3
+15 Mei 2026
+110.000
+3
+Lia
+0819-XXXX
+JI.Cempaka No.7
+15Mei 2026
+4
+Eko
+
+# Detections (index | score | text)
+0 | 0.9633 | DAFTAR PELANGGAN TOKO SEJAHTERA
+1 | 0.9982 | Harga
+2 | 0.9232 | No.HP
+3 | 0.9091 | Hutang (Rp)
+4 | 0.9977 | Alamat
+5 | 0.9986 | Tanggal
+6 | 0.9854 | 150.000
+7 | 0.9591 | No
+8 | 0.9981 | Nama
+9 | 0.8853 | 0821-XXXX
+10 | 0.8863 | Jl.Melati No.10
+11 | 0.9262 | 12 Mei 2026
+12 | 0.9827 | 45.000
+13 | 0.9976 | Rina
+14 | 0.9936 | 1
+15 | 0.8224 | 0853-XXXX
+16 | 0.9262 | JI.Anggrek No.8
+17 | 0.9213 | 14 Mei 2026
+18 | 0.9952 | 80.000
+19 | 0.9881 | 2
+20 | 0.9767 | Agus
+21 | 0.8015 | xxxx-9680
+22 | 0.9307 | JI.Dahlia No.3
+23 | 0.9230 | 15 Mei 2026
+24 | 0.9768 | 110.000
+25 | 0.9875 | 3
+26 | 0.9782 | Lia
+27 | 0.8468 | 0819-XXXX
+28 | 0.9242 | JI.Cempaka No.7
+29 | 0.9629 | 15Mei 2026
+30 | 0.9856 | 4
+31 | 0.9749 | Eko

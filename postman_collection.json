@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "Catat Warung Backend",
+    "_postman_id": "2e8f8b65-0000-4f9e-9abc-123456789abc",
+    "description": "API collection for Catat Warung backend (OCR + scan).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Scan (upload image)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": ""
+            },
+            {
+              "key": "needs_llm",
+              "type": "text",
+              "value": "false"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/scan",
+          "host": ["{{baseUrl}}"],
+          "path": ["scan"]
+        }
+      }
+    },
+    {
+      "name": "List outputs (scan/outputs)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/scan/outputs",
+          "host": ["{{baseUrl}}"],
+          "path": ["scan", "outputs"]
+        }
+      }
+    },
+    {
+      "name": "List outputs (/outputs)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/outputs",
+          "host": ["{{baseUrl}}"],
+          "path": ["outputs"]
+        }
+      }
+    },
+    {
+      "name": "List outputs (/api/outputs)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/outputs",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "outputs"]
+        }
+      }
+    },
+    {
+      "name": "Fetch annotated file",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/output/{{filename}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["output", "{{filename}}"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "filename",
+      "value": "annotated_example.jpg"
+    }
+  ]
+}
